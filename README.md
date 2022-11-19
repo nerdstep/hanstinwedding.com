@@ -1,8 +1,12 @@
-# Mantine + Vite template
+# The Hanstin Wedding Site
 
-Official [Mantine](https://mantine.dev/) + [Vite](https://vitejs.dev/) template.
+Han & Justin's wedding site.
 
-Links:
+www.hanstinwedding.com
 
-- [Mantine documentation](https://mantine.dev/)
-- [Vite documentation](https://vitejs.dev/)
+## Stack
+
+- Language: [TypeScript](https://www.typescriptlang.org/)
+- UI: [React](https://reactjs.org/) + [Mantine](https://mantine.dev/)
+- Build: [Vite](https://vitejs.dev/)
+- Host: [Netlify](https://netlify.com/)
