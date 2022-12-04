@@ -5,19 +5,41 @@
   "scripts": {
     "start": "vite --open",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "ts:check": "tsc --noEmit",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write ."
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
+    "@fontsource/open-sans": "^4.5.13",
+    "@fontsource/updock": "^4.5.3",
     "@mantine/core": "5.8.2",
     "@mantine/hooks": "5.8.2",
+    "@tabler/icons": "^1.112.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-countdown": "^2.3.4",
+    "react-dom": "^18.2.0",
+    "react-parallax": "^3.5.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.2",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
     "@vitejs/plugin-react": "^2.2.0",
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-mantine": "^2.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1",
     "typescript": "^4.7.4",
     "vite": "^3.2.4"
   }
