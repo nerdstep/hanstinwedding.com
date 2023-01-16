@@ -1,10 +1,10 @@
 import { Button, Flex } from '@mantine/core'
-import { Section } from './components/Section'
-import { mailto } from './lib/config'
+import { Section } from '../components/Section'
+import { mailto } from '../lib/config'
 
 export function Contact() {
   return (
-    <Section title="Questions?">
+    <Section title="Any Questions?">
       <Flex align="center" direction="column">
         <Button
           component="a"

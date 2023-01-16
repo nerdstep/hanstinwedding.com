@@ -1,5 +1,5 @@
 import { Anchor, Flex, Text } from '@mantine/core'
-import { colors } from './lib/theme'
+import { colors } from '../lib/theme'
 
 export function Footer() {
   return (

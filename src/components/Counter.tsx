@@ -1,5 +1,6 @@
 import { Flex, Text } from '@mantine/core'
 import Countdown from 'react-countdown'
+import { colors } from '../lib/theme'
 
 const units = ['days', 'hours', 'minutes', 'seconds']
 
@@ -22,9 +23,11 @@ export function Counter({ date }: CounterProps) {
           {[days, hours, minutes, seconds].map((el, i) => (
             <Flex key={i} align="center" direction="column" mx="md">
               <Flex align="center" justify="center">
-                <Text size={30}>{el}</Text>
+                <Text color={colors.offwhite} size={30}>
+                  {el}
+                </Text>
               </Flex>
-              <Text size="md" transform="uppercase">
+              <Text color={colors.offwhite} size="md" transform="uppercase">
                 {units[i]}
               </Text>
             </Flex>

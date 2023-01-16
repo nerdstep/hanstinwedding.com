@@ -1,5 +1,5 @@
 import { Box } from '@mantine/core'
-import { colors } from './lib/theme'
+import { colors } from '../lib/theme'
 
 export function Hero() {
   return (

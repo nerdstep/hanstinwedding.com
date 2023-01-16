@@ -1,15 +1,15 @@
 import { Anchor, Flex, Image, SimpleGrid, Text } from '@mantine/core'
-import { Section } from './components/Section'
-import { rsvpDeadline } from './lib/config'
-import { colors } from './lib/theme'
-import { Rsvp } from './Rsvp'
+import { Rsvp } from '../components/Rsvp'
+import { Section } from '../components/Section'
+import { rsvpDeadline } from '../lib/config'
+import { colors } from '../lib/theme'
 
 const formattedDate = new Intl.DateTimeFormat('en-US', {
   month: 'long',
   day: 'numeric',
 }).format(rsvpDeadline)
 
-export function Info() {
+export function Summary() {
   return (
     <Section>
       <SimpleGrid

@@ -1,4 +1,4 @@
-import { Box, Container, Text, Title } from '@mantine/core'
+import { Box, Container, Text } from '@mantine/core'
 import { colors } from '../lib/theme'
 
 interface SectionProps {
@@ -23,9 +23,14 @@ export function Section({
       <Container className={className} py="4rem" size="lg">
         <Box mb={children ? 'xl' : undefined}>
           {title && (
-            <Title align="center" color={color} fw={400} mb="lg" size="h1">
+            <Text
+              align="center"
+              color={color}
+              mb="lg"
+              size={40}
+              transform="uppercase">
               {title}
-            </Title>
+            </Text>
           )}
           {desc && (
             <Text align="center" color={color} size="xl">

@@ -1,11 +1,11 @@
 import { MantineProvider } from '@mantine/core'
 import { theme } from './lib/theme'
-import { Page } from './Page'
+import { Index } from './pages/Index'
 
 export default function App() {
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS theme={theme}>
-      <Page />
+      <Index />
     </MantineProvider>
   )
 }

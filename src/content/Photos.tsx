@@ -1,8 +1,8 @@
 import { Box, Flex, Image, Modal } from '@mantine/core'
 import { useViewportSize } from '@mantine/hooks'
 import { useCallback, useState } from 'react'
-import { Section } from './components/Section'
-import { colors } from './lib/theme'
+import { Section } from '../components/Section'
+import { colors } from '../lib/theme'
 
 interface Photo {
   name: string
