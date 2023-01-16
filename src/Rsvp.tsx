@@ -30,7 +30,7 @@ export function Rsvp() {
         </ScrollArea>
       </Modal>
       <Group position="center">
-        <Button size="lg" variant="white" onClick={() => setOpened(true)}>
+        <Button size="xl" variant="white" onClick={() => setOpened(true)}>
           RSVP
         </Button>
       </Group>

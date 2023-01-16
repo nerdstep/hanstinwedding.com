@@ -1,25 +1,27 @@
-import { Divider } from '@mantine/core'
+import { Box, Divider } from '@mantine/core'
 import { ScrollToTop } from './components/ScrollToTop'
-import { Faq } from './Faq'
+import { Contact } from './Contact'
 import { Footer } from './Footer'
 import { Hero } from './Hero'
 import { Info } from './Info'
-import { Intro } from './Intro'
-import { Story } from './Story'
+import { colors } from './lib/theme'
+import { Photos } from './Photos'
+
+const dividerSize = 6
 
 export function Page() {
   return (
-    <div>
+    <Box bg={colors.offwhite}>
       <Hero />
-      <Intro />
-      <Divider variant="dashed" />
+      <Divider color={colors.orange} size={dividerSize} />
       <Info />
-      <Divider variant="dashed" />
-      <Story />
-      <Divider variant="dashed" />
-      <Faq />
+      <Divider color={colors.orange} size={dividerSize} />
+      <Photos />
+      <Divider color={colors.orange} size={dividerSize} />
+      <Contact />
+      <Divider color={colors.blue} size={dividerSize} />
       <Footer />
       <ScrollToTop />
-    </div>
+    </Box>
   )
 }

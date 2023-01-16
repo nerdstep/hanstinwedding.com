@@ -1,11 +1,7 @@
-import { Avatar, Container, createStyles, Text, Timeline } from '@mantine/core'
+import { Avatar, Container, Text, Timeline } from '@mantine/core'
 import { Section } from './components/Section'
 
-const useStyles = createStyles((_theme) => ({}))
-
 export function Story() {
-  const { classes } = useStyles()
-
   return (
     <Section desc="We invite you to celebrate our wedding" title="Our Story">
       <Container size="sm">

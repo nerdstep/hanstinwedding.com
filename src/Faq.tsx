@@ -1,6 +1,6 @@
 import { Accordion, Container, createStyles } from '@mantine/core'
 import { Section } from './components/Section'
-import { rsvpDeadline } from './lib/config'
+import { mailto, rsvpDeadline } from './lib/config'
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -32,7 +32,7 @@ export function Faq() {
   const { classes } = useStyles()
 
   return (
-    <Section hasBg desc="" title="Frequently Asked Questions">
+    <Section title="Frequently Asked Questions">
       <Container size="sm">
         <Accordion
           variant="separated"
@@ -59,36 +59,27 @@ export function Faq() {
           <Accordion.Item className={classes.item} value="children">
             <Accordion.Control>Are children allowed?</Accordion.Control>
             <Accordion.Panel>
-              Our preference is for an adult themed wedding (hence the
-              location), however we understand the logistical challenges of that
-              ask. Please contact us to let us know if your little ones will be
-              attending.
+              Our preference is for an adult themed wedding, however we
+              understand the logistical challenges of that ask. Please contact
+              us to let us know if your little ones will be attending.
             </Accordion.Panel>
           </Accordion.Item>
 
           <Accordion.Item className={classes.item} value="registry">
             <Accordion.Control>Where are you registered?</Accordion.Control>
             <Accordion.Panel>
-              We are fortunate enough to have all of the eathly possessions we
-              could need. Your attendance is gift enough for us! However if you
-              insist, we love new experiences and making memories together, so
-              feel free to surprise us.
+              We are fortunate enough to have all of the earthly possessions we
+              could need, and your attendance is gift enough for us! However if
+              you insist, we love new experiences and making memories together,
+              so feel free to surprise us.
             </Accordion.Panel>
-          </Accordion.Item>
-
-          <Accordion.Item className={classes.item} value="last-name">
-            <Accordion.Control>
-              Are either of you changing your last name?
-            </Accordion.Control>
-            <Accordion.Panel>TBD</Accordion.Panel>
           </Accordion.Item>
 
           <Accordion.Item className={classes.item} value="questions">
             <Accordion.Control>Have any other questions?</Accordion.Control>
             <Accordion.Panel>
-              Shoot us an email at{' '}
-              <a href="mailto:justinwilliams42@gmail.com?subject=Hanstin Wedding">
-                justinwilliams42@gmail.com
+              <a href={mailto} rel="noreferrer" target="_blank">
+                Shoot us an email
               </a>
             </Accordion.Panel>
           </Accordion.Item>

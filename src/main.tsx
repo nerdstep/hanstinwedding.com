@@ -1,5 +1,4 @@
-import '@fontsource/open-sans'
-import '@fontsource/updock'
+import '@fontsource/montserrat'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './styles/index.css'

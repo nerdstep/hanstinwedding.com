@@ -1,6 +1,7 @@
 import { ActionIcon, Affix, Transition } from '@mantine/core'
 import { useWindowScroll } from '@mantine/hooks'
 import { IconArrowUpCircle } from '@tabler/icons'
+import { colors } from '../lib/theme'
 
 export function ScrollToTop() {
   const [scroll, scrollTo] = useWindowScroll()
@@ -11,7 +12,7 @@ export function ScrollToTop() {
         <Transition mounted={scroll.y > 700} transition="slide-up">
           {(transitionStyles) => (
             <ActionIcon
-              color="dark"
+              color={colors.blue}
               radius="xl"
               size="xl"
               style={transitionStyles}

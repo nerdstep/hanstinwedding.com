@@ -1,33 +1,37 @@
 import { Box, Container, Text, Title } from '@mantine/core'
+import { colors } from '../lib/theme'
 
 interface SectionProps {
-  children: React.ReactNode
+  bg?: string
+  children?: React.ReactNode
   className?: string
+  color?: string
   desc?: React.ReactNode
-  hasBg?: boolean
-  title: string
+  title?: string
 }
 
 export function Section({
+  bg = colors.offwhite,
+  color,
   children,
   className,
   desc,
-  hasBg,
   title,
 }: SectionProps) {
   return (
-    <Box bg={hasBg ? 'gray.1' : undefined}>
-      <Container className={className} py="xl" size="lg">
-        <Box mb="xl">
-          <Title
-            align="center"
-            className="font-updock"
-            fw={300}
-            mb="lg"
-            size={60}>
-            {title}
-          </Title>
-          {desc && <Text align="center">{desc}</Text>}
+    <Box bg={bg}>
+      <Container className={className} py="4rem" size="lg">
+        <Box mb={children ? 'xl' : undefined}>
+          {title && (
+            <Title align="center" color={color} fw={400} mb="lg" size="h1">
+              {title}
+            </Title>
+          )}
+          {desc && (
+            <Text align="center" color={color} size="xl">
+              {desc}
+            </Text>
+          )}
         </Box>
         {children}
       </Container>
