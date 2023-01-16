@@ -9,7 +9,7 @@ export function Details() {
       title="Wedding Details">
       <Box sx={{ textAlign: 'center' }}>
         <Title align="center" size="h2">
-          Accomodations
+          🏨 Accomodations
         </Title>
         <Text size="lg">
           <p>
@@ -26,13 +26,13 @@ export function Details() {
           <p>Please stay anywhere that fits your budget and needs.</p>
         </Text>
         <Title align="center" size="h2">
-          Dress Code
+          💃 Dress Code
         </Title>
         <Text size="lg">
           <p>Semi-formal attire; dress to impress!</p>
         </Text>
         <Title align="center" size="h2">
-          Gifts
+          💝 Gifts
         </Title>
         <Text size="lg">
           <p>

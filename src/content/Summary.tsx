@@ -22,6 +22,7 @@ export function Summary() {
         ]}>
         <Flex align="center" direction="column" mb="xl">
           <Image
+            alt="ceremony poker chip"
             mx="auto"
             radius="xl"
             src="/img/icon-chip-ceremony.svg"
@@ -52,6 +53,7 @@ export function Summary() {
         </Flex>
         <Flex align="center" direction="column" mb="xl">
           <Image
+            alt="reception poker chip"
             mx="auto"
             radius="xl"
             src="/img/icon-chip-reception.svg"
@@ -86,6 +88,7 @@ export function Summary() {
         </Flex>
         <Flex align="center" direction="column">
           <Image
+            alt="rsvp poker chip"
             mx="auto"
             radius="xl"
             src="/img/icon-chip-rsvp.svg"

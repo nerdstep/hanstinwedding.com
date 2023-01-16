@@ -32,7 +32,12 @@ export function Schedule() {
           </Timeline.Item>
           <Timeline.Item
             bullet={
-              <Avatar radius="xl" size={60} src="img/icon-chip-ceremony.svg" />
+              <Avatar
+                alt="ceremony poker chip"
+                radius="xl"
+                size={60}
+                src="img/icon-chip-ceremony.svg"
+              />
             }
             title={
               <Text color={colors.offwhite} fw={600} size="lg">
@@ -46,7 +51,12 @@ export function Schedule() {
           </Timeline.Item>
           <Timeline.Item
             bullet={
-              <Avatar radius="xl" size={60} src="img/icon-chip-reception.svg" />
+              <Avatar
+                alt="reception poker chip"
+                radius="xl"
+                size={60}
+                src="img/icon-chip-reception.svg"
+              />
             }
             title={
               <Text color={colors.offwhite} fw={600} size="lg">

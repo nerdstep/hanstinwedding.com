@@ -13,6 +13,7 @@ export const colors = {
 export const theme: MantineThemeOverride = {
   colorScheme: 'light',
   black: '#231f20',
+  primaryShade: 7,
   fontFamily: '"Montserrat", sans-serif',
   fontSizes: {
     xs: 12,
@@ -20,5 +21,13 @@ export const theme: MantineThemeOverride = {
     md: 16,
     lg: 18,
     xl: 20,
+  },
+  headings: {
+    fontWeight: 400,
+    sizes: {
+      h1: {
+        fontSize: 40,
+      },
+    },
   },
 }

@@ -91,6 +91,7 @@ export function Photos() {
         withCloseButton={false}
         onClose={() => setOpened(false)}>
         <Image
+          alt={activePhoto.title}
           caption={activePhoto.title}
           fit="contain"
           height={vHeight - 225}
@@ -120,6 +121,7 @@ export function Photos() {
             })}
             onClick={handleClick(photo)}>
             <Image
+              alt={photo.title}
               height="100%"
               radius="md"
               src={`/img/${photo.name}-tn.jpg`}
