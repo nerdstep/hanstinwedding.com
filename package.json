@@ -5,20 +5,40 @@
   "scripts": {
     "start": "vite --open",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "ts:check": "tsc --noEmit",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write ."
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
-    "@mantine/core": "5.8.2",
-    "@mantine/hooks": "5.8.2",
+    "@fontsource/montserrat": "^4.5.14",
+    "@mantine/core": "5.10.2",
+    "@mantine/hooks": "5.10.2",
+    "@tabler/icons-react": "^2.1.2",
     "react": "^18.2.0",
+    "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.9",
-    "@vitejs/plugin-react": "^2.2.0",
-    "typescript": "^4.7.4",
-    "vite": "^3.2.4"
+    "@babel/core": "^7.20.12",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "@vitejs/plugin-react": "^3.0.1",
+    "eslint": "^8.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-mantine": "^2.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.4"
   }
 }
