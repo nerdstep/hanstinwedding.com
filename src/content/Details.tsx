@@ -29,7 +29,7 @@ export function Details() {
           💃 Dress Code
         </Title>
         <Text size="lg">
-          <p>Semi-formal attire; dress to impress!</p>
+          <p>Semi-formal attire &mdash; dress to impress!</p>
         </Text>
         <Title align="center" size="h2">
           💝 Gifts

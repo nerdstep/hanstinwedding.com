@@ -62,20 +62,30 @@ const photos: Photo[] = [
 
 const sizeLarge = 256
 const sizeSmall = 128
+const count = photos.length - 1
 
 export function Photos() {
   //const isMobile = useMediaQuery('(max-width: 600px)')
   const [opened, setOpened] = useState(false)
   const [activePhoto, setActivePhoto] = useState<Photo>(photos[0])
-  const { height: vHeight, width: vWidth } = useViewportSize()
+  const [index, setIndex] = useState(0)
+  const { height: vHeight } = useViewportSize()
 
-  const handleClick = useCallback(
-    (photo: Photo) => () => {
+  const handleClickThumb = useCallback(
+    (photo: Photo, idx: number) => () => {
       setOpened(true)
       setActivePhoto(photo)
+      setIndex(idx)
     },
     []
   )
+
+  const handleClickImage = useCallback(() => {
+    let idx = index + 1
+    idx = idx > count ? 0 : idx
+    setActivePhoto(photos[idx])
+    setIndex(idx)
+  }, [index])
 
   return (
     <Section
@@ -96,6 +106,10 @@ export function Photos() {
           fit="contain"
           height={vHeight - 225}
           src={`/img/${activePhoto.name}.jpg`}
+          sx={{
+            cursor: 'pointer',
+          }}
+          onClick={handleClickImage}
         />
       </Modal>
       <Flex
@@ -104,12 +118,13 @@ export function Photos() {
         gap="xl"
         justify="center"
         wrap="wrap">
-        {photos.map((photo) => (
+        {photos.map((photo, idx) => (
           <Box
             key={photo.name}
             sx={(theme) => ({
               filter:
-                'drop-shadow(1px 1px 0px rgb(0 0 0 / 0.9)) drop-shadow(-1px -1px 0px rgb(0 0 0 / 0.9))',
+                'drop-shadow(1px 1px 0px rgb(0 0 0 / 0.7)) drop-shadow(-1px -1px 0px rgb(0 0 0 / 0.7))',
+              borderRadius: theme.radius.md,
               width: sizeLarge,
               height: sizeLarge,
               cursor: 'pointer',
@@ -119,7 +134,7 @@ export function Photos() {
                 height: sizeSmall,
               },
             })}
-            onClick={handleClick(photo)}>
+            onClick={handleClickThumb(photo, idx)}>
             <Image
               alt={photo.title}
               height="100%"
