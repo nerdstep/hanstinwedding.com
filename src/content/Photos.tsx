@@ -5,8 +5,12 @@ import { Section } from '../components/Section'
 import { colors } from '../lib/theme'
 
 const useModalStyles = createStyles((theme) => ({
+  close: {
+    color: colors.offwhite,
+  },
   modal: {
     backgroundColor: colors.darkblue,
+    boxShadow: 'none',
     [theme.fn.largerThan('sm')]: {
       backgroundColor: 'transparent',
       padding: '0 !important',
@@ -21,6 +25,8 @@ const useImageStyles = createStyles((theme) => ({
   image: {
     [theme.fn.largerThan('sm')]: {
       border: '1px solid rgb(0 0 0 / 0.7)',
+      boxShadow:
+        'rgb(0 0 0 / 0.05) 0px 1px 3px, rgb(0 0 0 / 0.1) 0px 28px 23px -7px, rgb(0 0 0 / 0.1) 0px 12px 12px -7px;',
     },
   },
   caption: {
@@ -87,7 +93,7 @@ const photos: Photo[] = [
 ]
 
 const sizeLarge = 256
-const sizeSmall = 100
+const sizeSmall = 112
 const count = photos.length - 1
 
 export function Photos() {
@@ -145,7 +151,7 @@ export function Photos() {
       <Flex
         align="center"
         direction="row"
-        gap="xl"
+        gap={isMobile ? 'xs' : 'xl'}
         justify="center"
         wrap="wrap">
         {photos.map((photo, idx) => (
