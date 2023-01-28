@@ -12,7 +12,7 @@ export function Hero() {
         paddingLeft: theme.spacing.xl,
         paddingRight: theme.spacing.xl,
         [theme.fn.smallerThan('sm')]: {
-          maxHeight: 500,
+          maxHeight: 600,
         },
       })}>
       <Box

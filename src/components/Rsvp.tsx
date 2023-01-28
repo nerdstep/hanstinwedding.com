@@ -1,8 +1,27 @@
 import { Button, Group, LoadingOverlay, Modal, ScrollArea } from '@mantine/core'
+import { useMediaQuery } from '@mantine/hooks'
 import { useState } from 'react'
+import { rsvpUrl } from '../lib/config'
 
 export function Rsvp() {
+  const isMobile = useMediaQuery('(max-width: 600px)')
   const [opened, setOpened] = useState(false)
+
+  if (isMobile) {
+    return (
+      <Group position="center">
+        <Button
+          component="a"
+          href={rsvpUrl}
+          rel="noreferrer"
+          size="xl"
+          target="_blank"
+          variant="white">
+          RSVP
+        </Button>
+      </Group>
+    )
+  }
 
   return (
     <>
@@ -16,11 +35,9 @@ export function Rsvp() {
         onClose={() => setOpened(false)}>
         <ScrollArea offsetScrollbars style={{ height: 800 }} type="auto">
           <iframe
-            frameBorder={0}
             height={1810}
-            marginHeight={0}
-            marginWidth={0}
-            src="https://forms.gle/NxPWoStZ3BXTWaDh7"
+            src={rsvpUrl}
+            style={{ border: 0, borderSpacing: 0 }}
             title="RSVP"
             width={600}>
             <div style={{ width: '100', position: 'relative' }}>

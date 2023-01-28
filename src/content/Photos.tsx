@@ -1,8 +1,34 @@
-import { Box, Flex, Image, Modal } from '@mantine/core'
-import { useViewportSize } from '@mantine/hooks'
+import { Box, createStyles, Flex, Image, Modal } from '@mantine/core'
+import { useMediaQuery, useViewportSize } from '@mantine/hooks'
 import { useCallback, useState } from 'react'
 import { Section } from '../components/Section'
 import { colors } from '../lib/theme'
+
+const useModalStyles = createStyles((theme) => ({
+  modal: {
+    backgroundColor: colors.darkblue,
+    [theme.fn.largerThan('sm')]: {
+      backgroundColor: 'transparent',
+      padding: '0 !important',
+    },
+  },
+}))
+
+const useImageStyles = createStyles((theme) => ({
+  imageWrapper: {
+    cursor: 'pointer',
+  },
+  image: {
+    [theme.fn.largerThan('sm')]: {
+      border: '1px solid rgb(0 0 0 / 0.7)',
+    },
+  },
+  caption: {
+    color: theme.white,
+    fontSize: theme.fontSizes.lg,
+    textShadow: '1px 1px 1px rgb(0 0 0 / 0.9)',
+  },
+}))
 
 interface Photo {
   name: string
@@ -61,11 +87,13 @@ const photos: Photo[] = [
 ]
 
 const sizeLarge = 256
-const sizeSmall = 128
+const sizeSmall = 100
 const count = photos.length - 1
 
 export function Photos() {
-  //const isMobile = useMediaQuery('(max-width: 600px)')
+  const { classes: modalClasses } = useModalStyles()
+  const { classes: imageClasses } = useImageStyles()
+  const isMobile = useMediaQuery('(max-width: 600px)')
   const [opened, setOpened] = useState(false)
   const [activePhoto, setActivePhoto] = useState<Photo>(photos[0])
   const [index, setIndex] = useState(0)
@@ -94,21 +122,23 @@ export function Photos() {
       title="Our Adventures">
       <Modal
         centered
-        //fullScreen={isMobile}
+        classNames={modalClasses}
+        fullScreen={isMobile}
         opened={opened}
         overflow="inside"
+        overlayBlur={3}
+        overlayOpacity={0.6}
         size="auto"
-        withCloseButton={false}
+        withCloseButton={isMobile}
         onClose={() => setOpened(false)}>
         <Image
           alt={activePhoto.title}
           caption={activePhoto.title}
+          classNames={imageClasses}
           fit="contain"
           height={vHeight - 225}
+          radius="md"
           src={`/img/${activePhoto.name}.jpg`}
-          sx={{
-            cursor: 'pointer',
-          }}
           onClick={handleClickImage}
         />
       </Modal>

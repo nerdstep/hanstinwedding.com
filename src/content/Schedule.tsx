@@ -42,7 +42,14 @@ export function Schedule() {
       bg={colors.darkblue}
       color={colors.offwhite}
       title="Event Schedule">
-      <Box mb="xl" sx={{ maxWidth: 500, margin: 'auto' }}>
+      <Box
+        sx={(theme) => ({
+          maxWidth: 500,
+          margin: 'auto',
+          [theme.fn.smallerThan('sm')]: {
+            paddingLeft: 10,
+          },
+        })}>
         <Timeline bulletSize={58} classNames={classes}>
           {items.map((item, i) => (
             <Timeline.Item
