@@ -8,5 +8,6 @@ www.hanstinwedding.com
 
 - Language: [TypeScript](https://www.typescriptlang.org/)
 - UI: [React](https://reactjs.org/) + [Mantine](https://mantine.dev/)
+- Animations: [Framer Motion](https://www.framer.com/motion/)
 - Build: [Vite](https://vitejs.dev/)
-- Host: [Netlify](https://netlify.com/)
+- Hosting: [Vercel](https://vercel.com/)

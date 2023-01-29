@@ -1,7 +1,10 @@
 import { Box, createStyles, Flex, Image, Modal } from '@mantine/core'
-import { useMediaQuery, useViewportSize } from '@mantine/hooks'
+import { useMediaQuery } from '@mantine/hooks'
+import { motion } from 'framer-motion'
 import { useCallback, useState } from 'react'
+import { Carousel } from '../components/Carousel'
 import { Section } from '../components/Section'
+import { images } from '../lib/carousel'
 import { colors } from '../lib/theme'
 
 const useModalStyles = createStyles((theme) => ({
@@ -9,117 +12,36 @@ const useModalStyles = createStyles((theme) => ({
     color: colors.offwhite,
   },
   modal: {
-    backgroundColor: colors.darkblue,
+    backgroundColor: 'transparent',
+    //backgroundColor: colors.darkblue,
     boxShadow: 'none',
+    padding: '0 !important',
     [theme.fn.largerThan('sm')]: {
       backgroundColor: 'transparent',
       padding: '0 !important',
     },
   },
-}))
-
-const useImageStyles = createStyles((theme) => ({
-  imageWrapper: {
-    cursor: 'pointer',
-  },
-  image: {
-    [theme.fn.largerThan('sm')]: {
-      border: '1px solid rgb(0 0 0 / 0.7)',
-      boxShadow:
-        'rgb(0 0 0 / 0.05) 0px 1px 3px, rgb(0 0 0 / 0.1) 0px 28px 23px -7px, rgb(0 0 0 / 0.1) 0px 12px 12px -7px;',
-    },
-  },
-  caption: {
-    color: theme.white,
-    fontSize: theme.fontSizes.lg,
-    textShadow: '1px 1px 1px rgb(0 0 0 / 0.9)',
+  body: {
+    overflow: 'hidden',
   },
 }))
-
-interface Photo {
-  name: string
-  title: string
-}
-
-const photos: Photo[] = [
-  {
-    name: 'p1',
-    title: 'RV Road Trip',
-  },
-  {
-    name: 'p2',
-    title: 'The Narrows, Zion National Park',
-  },
-  {
-    name: 'p3',
-    title: 'Kayaking, Half Moon Bay',
-  },
-  {
-    name: 'p4',
-    title: 'Wine Tasting, Napa Valley',
-  },
-  {
-    name: 'p5',
-    title: 'Lake Siskiyou, Mount Shasta',
-  },
-  {
-    name: 'p6',
-    title: 'Heavenly, Lake Tahoe',
-  },
-  {
-    name: 'p7',
-    title: 'Mount Lassen, Lassen Volcanic National Park',
-  },
-  {
-    name: 'p8',
-    title: 'The Cosmopolitan, Las Vegas',
-  },
-  {
-    name: 'p9',
-    title: 'Disney World, Florida',
-  },
-  {
-    name: 'p10',
-    title: 'Marina Bay Sands, Singapore',
-  },
-  {
-    name: 'p11',
-    title: 'Kanto Lampo Waterfall, Bali',
-  },
-  {
-    name: 'p12',
-    title: 'The Proposal on Mount Batur, Bali',
-  },
-]
 
 const sizeLarge = 256
 const sizeSmall = 112
-const count = photos.length - 1
 
 export function Photos() {
   const { classes: modalClasses } = useModalStyles()
-  const { classes: imageClasses } = useImageStyles()
   const isMobile = useMediaQuery('(max-width: 600px)')
   const [opened, setOpened] = useState(false)
-  const [activePhoto, setActivePhoto] = useState<Photo>(photos[0])
-  const [index, setIndex] = useState(0)
-  const { height: vHeight } = useViewportSize()
+  const [imageIndex, setImageIndex] = useState(0)
 
   const handleClickThumb = useCallback(
-    (photo: Photo, idx: number) => () => {
+    (index: number) => () => {
       setOpened(true)
-      setActivePhoto(photo)
-      setIndex(idx)
+      setImageIndex(index)
     },
     []
   )
-
-  const handleClickImage = useCallback(() => {
-    let idx = index + 1
-    idx = idx > count ? 0 : idx
-    setActivePhoto(photos[idx])
-    setIndex(idx)
-  }, [index])
 
   return (
     <Section
@@ -129,24 +51,15 @@ export function Photos() {
       <Modal
         centered
         classNames={modalClasses}
-        fullScreen={isMobile}
+        //fullScreen={isMobile}
         opened={opened}
         overflow="inside"
         overlayBlur={3}
         overlayOpacity={0.6}
         size="auto"
-        withCloseButton={isMobile}
+        withCloseButton={false}
         onClose={() => setOpened(false)}>
-        <Image
-          alt={activePhoto.title}
-          caption={activePhoto.title}
-          classNames={imageClasses}
-          fit="contain"
-          height={vHeight - 225}
-          radius="md"
-          src={`/img/${activePhoto.name}.jpg`}
-          onClick={handleClickImage}
-        />
+        <Carousel imageIndex={imageIndex} images={images} />
       </Modal>
       <Flex
         align="center"
@@ -154,37 +67,33 @@ export function Photos() {
         gap={isMobile ? 'xs' : 'xl'}
         justify="center"
         wrap="wrap">
-        {photos.map((photo, idx) => (
-          <Box
-            key={photo.name}
-            sx={(theme) => ({
-              filter:
-                'drop-shadow(1px 1px 0px rgb(0 0 0 / 0.7)) drop-shadow(-1px -1px 0px rgb(0 0 0 / 0.7))',
-              borderRadius: theme.radius.md,
-              width: sizeLarge,
-              height: sizeLarge,
-              cursor: 'pointer',
-              padding: 1,
-              [theme.fn.smallerThan('sm')]: {
-                width: sizeSmall,
-                height: sizeSmall,
-              },
-            })}
-            onClick={handleClickThumb(photo, idx)}>
-            <Image
-              alt={photo.title}
-              height="100%"
-              radius="md"
-              src={`/img/${photo.name}-tn.jpg`}
-              width="100%"
-              sx={(_theme) => ({
-                '&:hover': {
-                  filter:
-                    'drop-shadow(0px 8px 8px rgb(0 0 0 / 0.1)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.2))',
+        {images.map((image, index) => (
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <Box
+              key={image.name}
+              sx={(theme) => ({
+                filter:
+                  'drop-shadow(1px 1px 0px rgb(0 0 0 / 0.7)) drop-shadow(-1px -1px 0px rgb(0 0 0 / 0.7))',
+                borderRadius: theme.radius.md,
+                width: sizeLarge,
+                height: sizeLarge,
+                cursor: 'pointer',
+                padding: 1,
+                [theme.fn.smallerThan('sm')]: {
+                  width: sizeSmall,
+                  height: sizeSmall,
                 },
               })}
-            />
-          </Box>
+              onClick={handleClickThumb(index)}>
+              <Image
+                alt={image.title}
+                height="100%"
+                radius="md"
+                src={`/img/${image.name}-tn.jpg`}
+                width="100%"
+              />
+            </Box>
+          </motion.div>
         ))}
       </Flex>
     </Section>

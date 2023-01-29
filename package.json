@@ -17,6 +17,8 @@
     "@mantine/core": "5.10.2",
     "@mantine/hooks": "5.10.2",
     "@tabler/icons-react": "^2.1.2",
+    "framer-motion": "^8.5.4",
+    "popmotion": "^11.0.5",
     "react": "^18.2.0",
     "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0"

@@ -53,6 +53,7 @@ export function Schedule() {
         <Timeline bulletSize={58} classNames={classes}>
           {items.map((item, i) => (
             <Timeline.Item
+              key={i}
               color={colors.offwhite}
               bullet={
                 <Avatar alt={item.alt} radius="xl" size={80} src={item.image} />
