@@ -7,9 +7,10 @@ export function Footer() {
       align="center"
       bg={colors.darkblue}
       justify="center"
-      sx={{ height: 84 }}>
+      sx={{ height: 84 }}
+    >
       <Text color={colors.offwhite}>
-        Made by Han{' ❤️ '}
+        Made by Han ❤️
         {/* eslint-disable-next-line react/jsx-no-target-blank */}
         <Anchor
           href="https://www.nerdstep.com"
@@ -23,7 +24,8 @@ export function Footer() {
               borderBottomStyle: 'solid',
               textDecoration: 'none',
             },
-          }}>
+          }}
+        >
           Justin
         </Anchor>
       </Text>

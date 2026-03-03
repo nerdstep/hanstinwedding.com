@@ -6,13 +6,15 @@ export function Details() {
     <Section
       //bg={colors.darkblue}
       //color={colors.offwhite}
-      title="Wedding Details">
+      title="Wedding Details"
+    >
       <Box
         sx={(_theme) => ({
           maxWidth: 500,
           margin: 'auto',
           textAlign: 'left',
-        })}>
+        })}
+      >
         <Title size="h2">🏨 Accomodations</Title>
         <Text size="lg">
           <p>
@@ -20,7 +22,8 @@ export function Details() {
             <Anchor
               href="https://www.cosmopolitanlasvegas.com/"
               rel="noreferrer"
-              target="_blank">
+              target="_blank"
+            >
               The Cosmopolitan
             </Anchor>
             , where our reception is being held.

@@ -16,7 +16,8 @@ export function Rsvp() {
           rel="noreferrer"
           size="xl"
           target="_blank"
-          variant="white">
+          variant="white"
+        >
           RSVP
         </Button>
       </Group>
@@ -32,14 +33,16 @@ export function Rsvp() {
         overlayOpacity={0.55}
         size="auto"
         withCloseButton={false}
-        onClose={() => setOpened(false)}>
+        onClose={() => setOpened(false)}
+      >
         <ScrollArea offsetScrollbars style={{ height: 800 }} type="auto">
           <iframe
             height={1810}
             src={rsvpUrl}
             style={{ border: 0, borderSpacing: 0 }}
             title="RSVP"
-            width={600}>
+            width={600}
+          >
             <div style={{ width: '100', position: 'relative' }}>
               <LoadingOverlay visible overlayBlur={2} />
             </div>

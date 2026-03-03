@@ -41,7 +41,8 @@ export function Schedule() {
     <Section
       bg={colors.darkblue}
       color={colors.offwhite}
-      title="Event Schedule">
+      title="Event Schedule"
+    >
       <Box
         sx={(theme) => ({
           maxWidth: 500,
@@ -49,7 +50,8 @@ export function Schedule() {
           [theme.fn.smallerThan('sm')]: {
             paddingLeft: 10,
           },
-        })}>
+        })}
+      >
         <Timeline bulletSize={58} classNames={classes}>
           {items.map((item, i) => (
             <Timeline.Item
@@ -62,7 +64,8 @@ export function Schedule() {
                 <Text color={colors.offwhite} fw={600} size="lg">
                   {item.title}
                 </Text>
-              }>
+              }
+            >
               <Text color={colors.offwhite}>{item.desc}</Text>
               {i !== items.length - 1 && <Space h="xl" />}
             </Timeline.Item>

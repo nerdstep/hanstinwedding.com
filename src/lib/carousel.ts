@@ -22,7 +22,7 @@ export const variants = {
  * flicks without having binary checks on just distance thresholds
  * and velocity > 0.
  */
-export const swipeConfidenceThreshold = 10000
+export const swipeConfidenceThreshold = 10_000
 
 export const swipePower = (offset: number, velocity: number) =>
   Math.abs(offset) * velocity

@@ -19,7 +19,8 @@ export function Counter({ date }: CounterProps) {
           gap="xl"
           justify="center"
           w="100%"
-          wrap="wrap">
+          wrap="wrap"
+        >
           {[days, hours, minutes, seconds].map((el, i) => (
             <Flex key={i} align="center" direction="column" mx="md">
               <Flex align="center" justify="center">

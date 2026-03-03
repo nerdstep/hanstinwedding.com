@@ -17,7 +17,8 @@ export function ScrollToTop() {
             style={transitionStyles}
             title="Scroll to top"
             variant="filled"
-            onClick={() => scrollTo({ y: 0 })}>
+            onClick={() => scrollTo({ y: 0 })}
+          >
             <IconArrowUpCircle size={32} />
           </ActionIcon>
         )}

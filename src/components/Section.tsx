@@ -28,7 +28,8 @@ export function Section({
               color={color}
               mb="lg"
               size="h1"
-              transform="uppercase">
+              transform="uppercase"
+            >
               {title}
             </Title>
           )}

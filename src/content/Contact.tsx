@@ -12,7 +12,8 @@ export function Contact() {
           rel="noreferrer"
           size="xl"
           target="_blank"
-          variant="white">
+          variant="white"
+        >
           Contact Us
         </Button>
       </Flex>

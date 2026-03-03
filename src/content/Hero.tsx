@@ -14,7 +14,8 @@ export function Hero() {
         [theme.fn.smallerThan('sm')]: {
           maxHeight: 600,
         },
-      })}>
+      })}
+    >
       <Box
         sx={{
           backgroundImage: 'url(/img/hero.svg)',

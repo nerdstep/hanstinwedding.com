@@ -1,10 +1,15 @@
 import { Text } from '@mantine/core'
 import { useViewportSize } from '@mantine/hooks'
-import { AnimatePresence, LayoutGroup, motion, PanInfo } from 'framer-motion'
+import {
+  AnimatePresence,
+  LayoutGroup,
+  motion,
+  type PanInfo,
+} from 'framer-motion'
 import { wrap } from 'popmotion'
 import { useCallback, useState } from 'react'
 import {
-  CarouselImage,
+  type CarouselImage,
   swipeConfidenceThreshold,
   swipePower,
   variants,
@@ -23,13 +28,13 @@ export function Carousel({ images, imageIndex = 0 }: CarouselProps) {
     (newDirection: number) => {
       setPage([page + newDirection, newDirection])
     },
-    [page]
+    [page],
   )
 
   const handleDragEnd = useCallback(
     (
       _e: MouseEvent | TouchEvent | PointerEvent,
-      { offset, velocity }: PanInfo
+      { offset, velocity }: PanInfo,
     ) => {
       const swipe = swipePower(offset.x, velocity.x)
 
@@ -39,7 +44,7 @@ export function Carousel({ images, imageIndex = 0 }: CarouselProps) {
         paginate(-1)
       }
     },
-    [paginate]
+    [paginate],
   )
 
   // If we only have 3 images, but we paginate them absolutely
@@ -86,7 +91,8 @@ export function Carousel({ images, imageIndex = 0 }: CarouselProps) {
           sx={(theme) => ({
             color: theme.white,
             textShadow: '1px 1px 1px rgb(0 0 0 / 0.9)',
-          })}>
+          })}
+        >
           {title}
         </Text>
       </LayoutGroup>

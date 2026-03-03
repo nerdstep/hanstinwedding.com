@@ -19,7 +19,8 @@ export function Summary() {
           { maxWidth: 'md', cols: 3, spacing: 'md' },
           { maxWidth: 'sm', cols: 2, spacing: 'sm' },
           { maxWidth: 'xs', cols: 1, spacing: 'sm' },
-        ]}>
+        ]}
+      >
         <Flex align="center" direction="column" mb="xl">
           <Image
             alt="ceremony poker chip"
@@ -35,7 +36,8 @@ export function Summary() {
             <Anchor
               href="https://royalweddingchapel.com/"
               rel="noreferrer"
-              target="_blank">
+              target="_blank"
+            >
               Royal Wedding Chapel
             </Anchor>
           </Text>
@@ -43,7 +45,8 @@ export function Summary() {
             <Anchor
               href="https://goo.gl/maps/w4GR2TbRmvGCHK5d8"
               rel="noreferrer"
-              target="_blank">
+              target="_blank"
+            >
               1215 S Las Vegas Blvd
             </Anchor>
           </Text>
@@ -66,7 +69,8 @@ export function Summary() {
             <Anchor
               href="https://vegas.momofuku.com/"
               rel="noreferrer"
-              target="_blank">
+              target="_blank"
+            >
               Momofuku
             </Anchor>
           </Text>
@@ -78,7 +82,8 @@ export function Summary() {
             <Anchor
               href="https://goo.gl/maps/t5CkHzTS4fqjQE5B9"
               rel="noreferrer"
-              target="_blank">
+              target="_blank"
+            >
               3708 Las Vegas Blvd S
             </Anchor>
           </Text>
