@@ -1,0 +1,25 @@
+{
+  // https://developers.cloudflare.com/workers/wrangler/configuration/
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "hanstin-wedding",
+  "compatibility_date": "2025-11-17",
+  "assets": {
+    "directory": "./dist"
+  },
+  "preview_urls": true,
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "hanstinwedding.nerdstep.com",
+      "zone_name": "nerdstep.com",
+      "custom_domain": true
+    }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "vars": {},
+  "placement": {
+    "mode": "smart"
+  }
+}
