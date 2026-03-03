@@ -40,14 +40,15 @@ export function Photos() {
       setOpened(true)
       setImageIndex(index)
     },
-    []
+    [],
   )
 
   return (
     <Section
       bg={colors.darkblue}
       color={colors.offwhite}
-      title="Our Adventures">
+      title="Our Adventures"
+    >
       <Modal
         centered
         classNames={modalClasses}
@@ -58,7 +59,8 @@ export function Photos() {
         overlayOpacity={0.6}
         size="auto"
         withCloseButton={false}
-        onClose={() => setOpened(false)}>
+        onClose={() => setOpened(false)}
+      >
         <Carousel imageIndex={imageIndex} images={images} />
       </Modal>
       <Flex
@@ -66,11 +68,15 @@ export function Photos() {
         direction="row"
         gap={isMobile ? 'xs' : 'xl'}
         justify="center"
-        wrap="wrap">
+        wrap="wrap"
+      >
         {images.map((image, index) => (
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <motion.div
+            key={image.name}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <Box
-              key={image.name}
               sx={(theme) => ({
                 filter:
                   'drop-shadow(1px 1px 0px rgb(0 0 0 / 0.7)) drop-shadow(-1px -1px 0px rgb(0 0 0 / 0.7))',
@@ -84,7 +90,8 @@ export function Photos() {
                   height: sizeSmall,
                 },
               })}
-              onClick={handleClickThumb(index)}>
+              onClick={handleClickThumb(index)}
+            >
               <Image
                 alt={image.title}
                 height="100%"
