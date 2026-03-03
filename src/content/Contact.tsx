@@ -1,6 +1,5 @@
 import { Button, Flex } from '@mantine/core'
 import { Section } from '../components/Section'
-import { mailto } from '../lib/config'
 
 export function Contact() {
   return (
@@ -8,7 +7,7 @@ export function Contact() {
       <Flex align="center" direction="column">
         <Button
           component="a"
-          href={mailto}
+          href="#"
           rel="noreferrer"
           size="xl"
           target="_blank"

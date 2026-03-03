@@ -1,5 +1,4 @@
 import { Anchor, Flex, Image, SimpleGrid, Text } from '@mantine/core'
-import { Rsvp } from '../components/Rsvp'
 import { Section } from '../components/Section'
 import { rsvpDeadline } from '../lib/config'
 import { colors } from '../lib/theme'
@@ -105,7 +104,7 @@ export function Summary() {
           <Text align="center" mb="lg" size="lg">
             Please confirm your attendance by <strong>{formattedDate}</strong>
           </Text>
-          <Rsvp />
+          {/*<Rsvp />*/}
         </Flex>
       </SimpleGrid>
     </Section>

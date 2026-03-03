@@ -8,7 +8,4 @@ export const weddingDateFull = new Intl.DateTimeFormat('en', {
   dateStyle: 'full',
 }).format(weddingDate)
 
-export const mailto =
-  'mailto:justinwilliams42@gmail.com?cc=hanmccullough@gmail.com&subject=Hanstin Wedding'
-
 export const rsvpUrl = 'https://forms.gle/NxPWoStZ3BXTWaDh7'

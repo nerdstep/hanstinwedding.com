@@ -10,8 +10,7 @@ export function Footer() {
       sx={{ height: 84 }}
     >
       <Text color={colors.offwhite}>
-        Made by Han ❤️
-        {/* eslint-disable-next-line react/jsx-no-target-blank */}
+        Made by Han ❤️{' '}
         <Anchor
           href="https://www.nerdstep.com"
           rel="noreferrer"
